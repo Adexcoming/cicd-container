@@ -1,5 +1,5 @@
 // log in to ECR
-$(aws ecr get-login --no-include-email --region us-east-1)
+$(aws ecr get-login-password | docker login --username AWS --password-stdin <enter ECR repository url>)
 
 // build the docker image
 docker build -t youtube:latest .
